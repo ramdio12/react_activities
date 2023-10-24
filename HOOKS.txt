@@ -1,0 +1,54 @@
+
+useState = 
+Returns a stateful value, and a function to update it.
+The React useState Hook allows us to track state in a function component.
+State generally refers to data or properties that need to be tracking in an application.
+
+
+useReducer
+An alternative to useState.
+useReducer is usually preferable to useState when you have complex state 
+logic that involves multiple sub-values. It also lets you optimize 
+performance for components that trigger deep updates because you 
+can pass dispatch down instead of callbacks.
+
+dispatch function 
+The dispatch function returned by useReducer lets you update the state to a 
+different value and trigger a re-render. You need to pass the action as the 
+only argument to the dispatch function:
+
+const [state, dispatch] = useReducer(reducer, { age: 42 });
+
+function handleClick() {
+  dispatch({ type: 'incremented_age' });
+  // ...
+  }
+
+
+useEffect
+
+The useEffect Hook allows you to perform side effects in your components.
+Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+useEffect accepts two arguments. The second argument is optional.
+useEffect(<function>, <dependency>)
+
+
+useRef =
+
+What is the use of useRef?
+The useRef Hook allows you to persist values between renders. It can be used to store a mutable value that does not cause a re-render when updated. It can be used to access a DOM element directly.
+
+
+
+ //useLayoutEffect is called at early stage of page rendering
+
+ UseEffect() is asynchronous by nature: it will not delay painting the DOM to the browser, but on the other hand, the useLayoutEffect() hook is synchronous, and it will delay painting the DOM to the browser. It runs its code before painting to the browser.
+
+useImperativeHandle = 
+
+useContext = 
+
+ Rendering is React's process of describing a user interface based on the application's current state and props. The initial render in a React app is the first render when the application starts up, while re-rendering occurs when there is a change in the state to figure out which parts of the UI need an update.
+
+ Rendering is the process used to show the output of markup and code to the user in the browser. A basic example would be when you markup a button in HTML and then see it appear on the page — this is rendering at work.
+

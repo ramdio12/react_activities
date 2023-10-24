@@ -1,0 +1,21 @@
+tailwind CSS
+-Utility first CSS framework for creating 
+modern designs quickly
+-we can write our own component
+
+
+Req:
+HTML and CSS Basics
+
+
+you can install tailwind css through
+    Tailwind CLI
+    Using POstCSS
+    Framework Guides
+    CDN
+
+https://tailwindcss.com/docs/installation
+
+npm run
+    -build
+    -watch

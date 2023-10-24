@@ -1,0 +1,133 @@
+react- 
+a virtual DOM
+a javascript library, not a framewrok
+focuses on UI
+
+node js=   package manage
+component=
+JSX=
+
+What is in React props?
+In React, the term props stands for properties, which refers to the properties of an object. This is because all elements created in React are JavaScript objects. As a result, passing data into a component is done by creating properties and values for the object.
+
+What is a JavaScript object?
+In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc.
+
+
+Commonly used array method
+maps 
+forEach
+with maps you need to put key
+
+state = variable that holds data 
+
+Hooks =
+React Hooks are simple JavaScript functions that we can use to isolate the reusable part from a functional component. Hooks can be stateful and can manage side-effects. React provides a bunch of standard in-built hooks
+
+useState=
+useState is a hook used to manage states. Returns a stateful value 
+and an updater function to update it.
+
+example :
+const [count,setCount] = useState(0);
+const [inputValue,setInputValue] = useState("")
+const [isTrue,setIsTrue] = useState(false);
+const [arrays,setArrays] = useState([])
+
+//input value using input element only
+const [input,setInput] = useState("")
+  const inputValue = (event) => {
+    setInput(event.target.value)
+  }
+
+
+react lifecycle stages
+
+useEffect = 
+The useEffect Hook allows you to perform side effects in your components.
+Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+useEffect accepts two arguments. The second argument is optional.
+useEffect(<function>, <dependency>)
+
+mounting 
+updating
+unmounting
+
+
+strictmode in index.js will make some checks for you
+
+ // fetch("https://catfact.ninja/fact")
+  // .then((response)=>response.json())
+  // .then((data)=> {
+  //   console.log(data)
+  // });
+
+  //useEffect runs twice
+  //in ract 18 useEffect  runs twice because
+  //it mounts once  and unmounts and mounts again
+  // useEffect(()=>{
+  //   fetchCatFact();
+  // },[])
+  
+  // const fetchCatFact = () =>{
+
+  //   Axios.get("https://catfact.ninja/fact").then((response)=>{
+  //     setCatFact(response.data.fact)
+  //   })
+  // }
+
+
+  example of code with useEffect
+  import './App.css';
+import {useState,useEffect} from 'react';
+import Axios from "axios"
+
+
+function App() {
+
+  const [name,setName] = useState("");
+  const [predictedAge,setPredictedAge] = useState(null);
+
+  const fetchData = () => {
+    Axios.get(`https://api.agify.io/?name=${name}`)
+      .then((response)=>{
+        setPredictedAge(response.data)
+      })
+  }
+
+  return (
+    <div className="App">
+    <input placeholder='Ex. pedro' 
+      onChange={(event)=>{
+        setName(event.target.value);
+      }}/>
+      <button onClick={fetchData}>Predict Age</button>
+      <p>Name: {predictedAge?.name}</p>
+      <p>Predicted Age: {predictedAge?.age} </p>
+      <p>Count: {predictedAge?.count}</p>
+    </div>
+  )
+}
+
+export default App;
+
+
+
+React router dom = 
+
+
+state management = 
+
+
+useContext Hook =
+a solution for prop drilling
+
+React Context is a way to manage state globally.
+It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+
+React query = 
+
+What is react query for?
+
+React Query is a data-fetching and state management library for React applications that simplifies fetching, caching, and updating data. 
+React Query provides: An intuitive API for fetching data from RESTful or GraphQL APIs. Caching the results.
